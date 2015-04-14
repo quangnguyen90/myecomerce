@@ -44,7 +44,7 @@ class PicModel extends CI_Model
 	//*************************************************************************************************************
 	function getAllCart($cart_id)
 	{
-		$this->db->where('cart_id', $cart_id);
+		$this->db->where('id', $cart_id);
 		$query = $this->db->get($this->carts_table_name);
 
 		return $query->num_rows() > 0 ? $query->result() : NULL;

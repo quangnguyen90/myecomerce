@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2015 at 02:15 PM
+-- Generation Time: Apr 14, 2015 at 09:57 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -27,17 +27,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `carts` (
-`cart_id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `json` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `carts`
 --
 
-INSERT INTO `carts` (`cart_id`, `json`) VALUES
-(1, '2,2,2,2,1,1,1'),
-(2, '1,1,1,1,1,2');
+INSERT INTO `carts` (`id`, `json`) VALUES
+(18, '1,2,2,2,2,2,2,1,1,1');
 
 -- --------------------------------------------------------
 
@@ -79,7 +78,7 @@ INSERT INTO `picture` (`pic_id`, `pic_name`, `product_name`, `product_id`, `prod
 -- Indexes for table `carts`
 --
 ALTER TABLE `carts`
- ADD PRIMARY KEY (`cart_id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `picture`
@@ -95,7 +94,7 @@ ALTER TABLE `picture`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `picture`
 --
