@@ -72,8 +72,13 @@ class Shop extends CI_Controller {
 			$obj = array(
 				'json' => $sg3
 			);
-			$id = $this->picModel->add_cart($obj);
-			redirect('http://localhost/myecommerce/index.php/shop/show/'.$this->p_pic($sg3).'/'.$id,'refresh');
+			if(!is_null($id_add = $this->picModel->add_cart($obj))){
+				$id = $id_add;
+				redirect('http://localhost/myecommerce/index.php/shop/show/'.$this->p_pic($sg3).'/'.$id,'refresh');
+			}
+			else {
+				redirect("shop/show/0/x");
+			}
 		}
 		else {
 			$this->db->where('id', $sg4);
