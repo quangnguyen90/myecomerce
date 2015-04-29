@@ -72,8 +72,7 @@ class Shop extends CI_Controller {
 			$obj = array(
 				'json' => $sg3
 			);
-			$this->db->insert('carts', $obj);
-			$id=$this->db->insert_id();
+			$id = $this->picModel->add_cart($obj);
 			redirect('http://localhost/myecommerce/index.php/shop/show/'.$this->p_pic($sg3).'/'.$id,'refresh');
 		}
 		else {
@@ -82,7 +81,7 @@ class Shop extends CI_Controller {
 			$obj = array(
 				'json' => $json.','.$sg3
 			);
-			$this->db->update('carts', $obj);
+			$id = $this->picModel->update_cart($obj, $sg4);
 			redirect('http://localhost/myecommerce/index.php/shop/show/'.$this->p_pic($sg3).'/'.$sg4,'refresh');
 		}
 	}

@@ -65,6 +65,27 @@ class PicModel extends CI_Model
 		return $query->num_rows() >0 ? $query->result() : NULL;
 	}
 
+	public 	function add_cart($data)
+	{
+		if ($this->db->insert($this->carts_table_name, $data)) {
+			$data['id'] = $this->db->insert_id();
+
+			return $data['id'];
+		} else {
+			return NULL;
+		}
+	}
+
+	public function update_cart($data, $id){
+		$this->db->where('id', $id);
+		if ($this->db->update($this->carts_table_name, $data)) {
+			return $id;
+		} else {
+			return NULL;
+		}
+	}
+	
+
 	//*************************************************************************************************************
 	/**
 	 * check exist example
